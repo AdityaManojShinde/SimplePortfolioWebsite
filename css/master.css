@@ -1,0 +1,310 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Navbar Styling */
+.topnav {
+    background-color: #0058ff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.topnav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 12px;
+    transition: background-color 0.3s ease;
+}
+
+.topnav a:hover {
+    background-color: #003fb3;
+    border-radius: 5px;
+}
+
+.split {
+    margin-left: auto;
+}
+
+/* Header Section with Circular Avatar */
+.profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background-color: #0058ff;
+
+    margin-bottom: 20px;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 30px;
+}
+
+.intro h1 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.intro h2 {
+    font-size: 1.2rem;
+    color: #281c86;
+    margin-bottom: 15px;
+}
+
+.intro p {
+    max-width: 600px;
+    text-align: start;
+}
+
+/* Portfolio Section with Project Cards */
+#portfolio {
+    padding: 40px 20px;
+    background-color: #eaeaea;
+}
+
+#portfolio h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #0058ff;
+}
+
+.portfolio-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33% - 40px);
+    min-width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    color: #0058ff;
+    margin-bottom: 10px;
+}
+
+/* Skills Section */
+#skills {
+    padding: 40px 20px;
+    background-color: #fff;
+}
+
+#skills h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #0058ff;
+}
+
+/* Headlights Section*/
+#highlights {
+    margin-top: 30px;
+    padding: 40px 20px;
+    background-color: #fff;
+}
+
+#highlights h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #0058ff;
+}
+
+#highlights h3,
+ul {
+    text-align: start;
+    padding-left: 30px;
+
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+    padding: 0 20px;
+}
+
+.skills-grid div {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Contact Section */
+#contact {
+    padding: 40px 20px;
+    background-color: #eaeaea;
+}
+
+#contact h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0058ff;
+}
+
+#contact p {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#contact a {
+    color: #0058ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#contact a:hover {
+    color: #003fb3;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #0058ff;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-container img {
+        margin-bottom: 20px;
+    }
+
+    .portfolio-cards {
+        flex-direction: column;
+    }
+
+    .card {
+        flex: 1 1 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .topnav {
+        flex-direction: column;
+    }
+
+    .topnav a {
+        padding: 10px;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+/* Hero Section Animation */
+.hero-section {
+    padding: 50px 20px;
+    background-color: #0058ff;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slide-up 1s forwards;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    transform: scale(0.8);
+    animation: scale-up 1s forwards 0.3s;
+}
+
+.intro h1,
+.intro h2,
+.intro p {
+    opacity: 0;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fade-in 1s forwards;
+}
+
+.fade-in:nth-of-type(1) {
+    animation-delay: 0.4s;
+}
+
+.fade-in:nth-of-type(2) {
+    animation-delay: 0.7s;
+}
+
+.fade-in:nth-of-type(3) {
+    animation-delay: 1s;
+}
+
+/* Keyframes */
+@keyframes slide-up {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scale-up {
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes fade-in {
+    to {
+        opacity: 1;
+    }
+}
